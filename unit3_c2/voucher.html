@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+   <style>
+      #voucher_list{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(auto);
+  gap: 20px;
+
+}
+   </style>
+  </head>
+  <body>
+    <h1 id="wallet_balance">0</h1>
+
+    <div class="voucher"></div>
+    <div id="voucher_list"></div>
+    
+    <!-- Wallet balence id:- "wallet_balance" (only number). -->
+    <!-- - The voucher card will have class :- "voucher".
+  - All the vouchers will be appended inside div with id "voucher_list".
+  - Buy button will have class:- "buy_voucher"
+  - All the purchased voucher will be stored with key :- "purchase". -->
+  </body>
+</html>
+<script>
+  // let wallet= document.getElementById("wallet_balanced").value;
+  // let btn=document.getElementsByClassName("buy_voucher").value
+  // wallet.innerHtml=btn.value
+  // console.log(wallet.value)
+
+
+  const url="https://masai-vouchers-api.herokuapp.com/api/vouchers"
+  getData(url)
+  async function getData(url){
+    let res=await fetch(url)
+    let data=await res.json();
+    console.log(data[0].vouchers)
+    append(data[0].vouchers)
+  }
+  let Get=JSON.parse(localStorage.getItem("purchase"))||[]
+ function append(vouchers){
+  vouchers.forEach(function(el){
+    let box=document.createElement("div")
+  let image=document.createElement("img")
+  image.src=el.image
+  let name=document.createElement("h3")
+  name.src=el.name
+  let price=document.createElement("h3")
+  price.src=el.price
+  let btn=document.createElement("button")
+  btn.innerHTML="Buy"
+  btn.setAttribute("class","buy_voucher")
+  btn.addEventListener("click",function(){
+    buyfunc(el)
+
+    
+  })
+  box.append(image,name,price,btn)
+document.getElementById("voucher_list").append(box)
+localStorage.setItem("purchase",JSON.stringify("Get"))
+
+})
+ }
+</script>
