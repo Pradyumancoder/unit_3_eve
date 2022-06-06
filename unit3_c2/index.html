@@ -9,7 +9,7 @@
      a{
         color: red;
     position: relative;
-    left: 601px;
+    left: 1230px;
     bottom: 41px;
       }
       #form{
@@ -43,26 +43,5 @@
   - The input fields should become empty after submitting -->
   </body>
 </html>
-<script>
+<script src="scripts/main.js"></script>
 
-document.querySelector("form").addEventListener("submit", signUpFun);
-
-  var userData = JSON.parse(localStorage.getItem("user"))||[]
-  function signUpFun() {
-    
-    event.preventDefault();
-
-    var userObj = {
-      name: document.querySelector("#name").value,
-      email: document.querySelector("#email").value,
-      address: document.querySelector("#address").value,
-      amount: document.querySelector("#amount").value,
-    };
-    console.log(userObj);
-    userData.push(userObj);
-    //console.log(userData)
-
-    localStorage.setItem("user",JSON.stringify(userData))
-
-  }
-</script>
