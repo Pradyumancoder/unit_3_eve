@@ -5,39 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Purchases</title>
+
+    <style>
+
+      #navbar{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(126, 197, 197);
+      }
+
+     #purchased_vouchers {
+       text-align: center;
+     }
+
+    </style>
   </head>
   <body>
-    <h1 id="wallet_balance">0</h1>
-    <!-- Wallet balence id:- "wallet_balance" (only number). -->
+    <div id="navbar">
+      <h1>Buy Voucher</h1>
+      <h1 id="wallet_balance">0</h1>
+      <a href="index.html">Add Money</a>
+    </div>
+<br>
+<br>
     <div id="purchased_vouchers"></div>
-    <h3 id="balance"></h3>
+    <!-- Wallet balence id:- "wallet_balance" (only number). -->
     <!-- - All the purchased voucher will be appended in div with id as "purchased_vouchers".
-    
   - The remaining balance will show on the page inside h3 tag with id as "balance" -->
   </body>
 </html>
-<script>
-  
-// const data = JSON.parse(localStorage.getItem("purchased_vouchers"));
-// let money = JSON.parse(localStorage.getItem("money"));
-// money = +money;
-// //console.log(typeof money)
-// // document.getElementById("wallet").innerText = money;
 
-// function append(vouchers){
-//   vouchers.forEach(function(el){
-//     let box=document.createElement("div")
-//   let image=document.createElement("img")
-//   image.src=el.image
-//   let name=document.createElement("h3")
-//   name.innerText=el.name
-//   let price=document.createElement("h3")
-//   price.innerText=el.price
-//   box.append(image,name,price)
-// document.getElementById("purchased_vouchers").append(box)
-//   })
-
-// window.location.href="purchase.html"
-// localStorage.setItem("purchase",JSON.stringify("Get"))
-// }
-</script>
+<script src="scripts/purchase.js"></script>

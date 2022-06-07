@@ -4,35 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
     <style>
-     a{
-        color: red;
-    position: relative;
-    left: 1230px;
-    bottom: 41px;
+
+      #navbar {
+        display: flex;
+        justify-content: space-between;
+        background-color: yellowgreen;
       }
-      #form{
-        text-align: center;
-      }
+     form{
+       margin-left: 600px;
+       text-align: center;
+       background-color: blue;
+       width:250px;
+     }
+     #name,#address,#email,#amount{
+       background-color: aqua;
+       text-align: center;
+      
+     }a{
+       background-color: blue;
+       color: yellow;
+       margin-top: 20px;
+     }
+
     </style>
+    <title>Home</title>
+    
   </head>
   <body>
     <div id="navbar">
       <h3>Sign Up</h3>
-   
       <a href="voucher.html">Purchase Voucher</a>
     </div>
-    <form id="form">
-    <input type="text" placeholder="name" id="name">
-    <br><br>
-    <input type="email" placeholder="email" id="email">
-    <br><br>
-    <input type="text" placeholder="address" id="address">
-    <br><br>
-    <input type="text" placeholder="amount" id="amount">
-    <br><br>
-    <input type="submit" id="submit">
+    <br>
+    <form>
+
+      <input placeholder="name" id="name" type="text">
+      <br>
+      <br>
+      <input placeholder="email" id="email" type="email">
+      <br>
+      <br>
+      <input placeholder="address" id="address" type="text">
+      <br>
+      <br>
+      <input placeholder="Add amount to Wallet" id="amount" type="number">
+      <br>
+      <br>
+      <input id="submit" type="submit" value="Submit">
+      
+
+
+
     </form>
     <!-- - name input box :- "name"
   - email input box :- "email"
@@ -43,5 +66,5 @@
   - The input fields should become empty after submitting -->
   </body>
 </html>
-<script src="scripts/main.js"></script>
 
+<script src="scripts/main.js"></script>
